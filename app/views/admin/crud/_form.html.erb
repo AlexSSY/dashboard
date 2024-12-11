@@ -1,0 +1,11 @@
+<%= simple_form_for record, url: determine_path(record), method: determine_method(record) do |f| %>
+  <% editable_fields_with_types(record.class).each do |field, field_type| %>
+    <div class="mb-4">
+      <%= f.input field, 
+                  #as: input_type_for(field_type), 
+                  label: field.humanize, 
+                  input_html: { class: "block w-full border-gray-300 rounded-md shadow-sm" } %>
+    </div>
+  <% end %>
+  <%= component "admin/simple_form/submit", f, method: determine_method(record) %>
+<% end %>

@@ -1,0 +1,20 @@
+<div class="flex items-center justify-between" style="grid-area: header;">
+  
+  <div class="flex w-96 items-center">
+    <!-- search -->
+    <%= component "admin/header/search" %>
+
+  </div>
+
+  <div class="flex items-center space-x-2">
+    <!-- User Profile -->
+    <%= render UI::TextComponent.new do %>
+      Hello, 
+      <%= render UI::TextComponent.new "Queen!", class: "font-bold" %>
+    <% end %>
+    <div class="relative">
+      <%= component "admin/header/profile" %>
+    </div>
+  </div>
+
+</div>
